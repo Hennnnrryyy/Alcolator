@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PF-U6-uex">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PF-U6-uex">
                                 <rect key="frame" x="245" y="96" width="82" height="33"/>
                                 <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="18"/>
                                 <state key="normal" title="Calculate!">
@@ -33,7 +33,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="jC2-hL-b32">
                                 <rect key="frame" x="14" y="58" width="572" height="31"/>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIt-Gh-EbD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIt-Gh-EbD">
                                 <rect key="frame" x="31" y="137" width="538" height="25"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -44,6 +44,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="hIt-Gh-EbD" secondAttribute="trailing" constant="15" id="13Q-3Y-uGE"/>
+                            <constraint firstItem="hIt-Gh-EbD" firstAttribute="width" secondItem="6PF-U6-uex" secondAttribute="width" id="6gy-3N-YP4"/>
                             <constraint firstItem="6PF-U6-uex" firstAttribute="centerX" secondItem="jC2-hL-b32" secondAttribute="centerX" constant="-14" id="A8g-D5-aUY"/>
                             <constraint firstItem="2i3-X4-04n" firstAttribute="width" secondItem="jC2-hL-b32" secondAttribute="width" id="HvG-Cq-8EG"/>
                             <constraint firstItem="hIt-Gh-EbD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="Ko4-Hm-aGS"/>
