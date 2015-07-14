@@ -41,11 +41,15 @@
     
     NSString *whiskeyText;
     
-    if (numberOfWhiskeyGlassesForEquivalentAlcoholAmount == 1) {
+    if (numberOfWhiskeyGlassesForEquivalentAlcoholAmount >= .95 && numberOfWhiskeyGlassesForEquivalentAlcoholAmount < 1.05) {
+        // Fixed it here as well
         whiskeyText = NSLocalizedString(@"shot", @"singular shot");
     } else {
         whiskeyText = NSLocalizedString(@"shots", @"plural of shot");
     }
+    
+    self.amountOfConvertedDrink = [NSMutableString stringWithFormat:@"%.1f %@ of whiskey",numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText]; // Saves the string needed for the navigation item
+    self.navigationItem.title = self.amountOfConvertedDrink; // Sets the title
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
     self.resultLabel.text = resultText;
 }

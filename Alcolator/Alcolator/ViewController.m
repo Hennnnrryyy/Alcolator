@@ -33,6 +33,7 @@
 }
 - (IBAction)sliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
+    [self buttonPressed:nil]; // Run the buttonPressed method
     [self.beerPercentTextField resignFirstResponder];
 }
 - (IBAction)buttonPressed:(UIButton *)sender {
@@ -56,15 +57,20 @@
         beerText = NSLocalizedString(@"beers", @"plural of beer");
     }
     NSString *wineText;
-    if (numberOfWineGlassesForEquivalentAlcoholAmount == 1) {
+    if (numberOfWineGlassesForEquivalentAlcoholAmount >= .95 && numberOfWineGlassesForEquivalentAlcoholAmount < 1.05) {
+        //Fixed if statement so this will run
         wineText = NSLocalizedString(@"glass", @"singular glass");
     } else {
         wineText = NSLocalizedString(@"glasses", @"plural of glass");
     }
+    self.amountOfConvertedDrink = [NSMutableString stringWithFormat: @"%.1f %@ of wine",numberOfWineGlassesForEquivalentAlcoholAmount,wineText]; // Saves the string needed for the navigation item
+    self.navigationItem.title = self.amountOfConvertedDrink; // Sets the title to the appropriate string
+
     // generate the result text, and display it on the label
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of wine.", nil), numberOfBeers, beerText,  [self.beerPercentTextField.text floatValue], numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
     self.resultLabel.text = resultText;
 }
+
 - (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
     [self.beerPercentTextField resignFirstResponder];
 }

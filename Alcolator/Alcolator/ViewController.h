@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *beerPercentTextField;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (weak, nonatomic) IBOutlet UISlider *beerCountSlider;
+@property (strong, nonatomic) NSMutableString *amountOfConvertedDrink; // So other methods can access this
 
 - (void)buttonPressed:(UIButton *)sender;
 
